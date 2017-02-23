@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>TEST</title>
+    <!-- <link href="css/reset.css" rel="stylesheet"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-xs-12">
+                    <div id="navbar">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">Насколько хорошо вы знаете латинские крылатые выражения? >> Test</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-xs-12">
+                    <h1>Знаете ли вы латинские крылатые выражения?</h1>
+                    <p>Вплоть до 20-го века непременным атрибутом образованного человека считалось знание латинского языка. Он входил в обязательную учебную программу гимназий, лицеев и университетов. Сейчас этот язык остался популярным только у медиков, филологов да историков древнего Рима. Впрочем, знание крылатых фраз на латыни позволяет блеснуть эрудицией каждому, так что кое-что вы наверняка знаете. Проверим?</p>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+<main>
+    <div class="container">
+        <div class="row row-header">
+            <div class="col-xs-12 test-plaseholder">
+                <script type="text/html" id="test">
+                    <% for (var i = 0; i < data.length; i++) { %>
+                        <h3><%= data[i].question %></h3>
+                        <% for (var j = 0; j < data[i].answers.length; j++) { %>
+                            <div class="checkbox"><label><input type="checkbox" value="" class="answer"><%= data[i].answers[j] %></label>
+                            </div>
+                        <% }; %>
+                    <% }; %>
+                </script>
+            </div>
+            <br>
+            <br>
+            <button type="button" class="btn btn-success btn-lg" id="check_results"> Готово </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Результаты тестирования</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p id="result"></p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="close">Close</button>
+                    <button type="button" class="btn btn-primary" id="showCorrectAnswers">Правильные ответы</button>
+
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+
+
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+
+
+
+
+</main>
+
+
+<script src="js/tmpl.js" ></script>
+<script src="js/js.js" ></script>
+</body>
+
+</html>
